@@ -1,0 +1,1 @@
+"My test project of React Native"
