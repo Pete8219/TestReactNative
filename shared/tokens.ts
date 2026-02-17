@@ -5,7 +5,9 @@ export const Colors = {
     primaryHover:'#452481',
     link:'#A97BFF',
     grey:'#AFB2BF',
-    white:'#FAFAFA'
+    white:'#FAFAFA',
+    red: "#CC384E"
+
 
 
 }
@@ -17,5 +19,6 @@ export const Radius = {
 
 export const Fonts = {
     f18:18,
+    f16:16
 }
 

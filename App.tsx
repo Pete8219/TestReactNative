@@ -1,14 +1,22 @@
-import { StyleSheet, Text, View, Button, TouchableOpacity, Modal, Image , TextInput} from 'react-native';
+import { StyleSheet, Text, View,  Image ,  Alert }from 'react-native';
 import  LoginButton  from './components/LoginButton'
 import Input from './shared/Input/Input';
 import { Colors } from './shared/tokens';
+import ErrorNotification from './components/ErrorNotification/ErrorNotification';
+import { useState } from 'react';
 
 
 
 export default function App() {
+  const [error, setError] = useState<string | undefined>()
+
+  const alert = () => {
+    setError('Wrong login or password')
+  }
 
   return (
     <View style={styles.container}>
+      <ErrorNotification error ={error}/>
   
       <View style={styles.content}>
 
@@ -27,7 +35,7 @@ export default function App() {
             isPassword 
             placeholderTextColor={Colors.grey}
           />
-         <LoginButton text='Войти'/>
+         <LoginButton text='Войти' onPressIn={alert}/>
           
         </View>
          <Text style={styles.formText}>Восстановить пароль</Text>
